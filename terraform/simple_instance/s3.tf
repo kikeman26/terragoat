@@ -19,3 +19,12 @@ resource "aws_s3_bucket" "dockingbay1" {
     git_repo             = "terragoat"
   }
 }
+
+
+resource "aws_s3_bucket_versioning" "dockingbay1" {
+  bucket = aws_s3_bucket.dockingbay1.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
