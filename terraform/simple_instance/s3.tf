@@ -82,11 +82,3 @@ resource "aws_s3_bucket_logging" "dockingbay" {
   target_bucket = aws_s3_bucket.dockingbay_log_bucket.id
   target_prefix = "log/"
 }
-
-resource "aws_s3_bucket_versioning" "dockingbay" {
-  bucket = aws_s3_bucket.dockingbay.id
-
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
