@@ -26,7 +26,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "dockingbay1" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "aws:kms"
+      sse_algorithm = "aws:kms"
     }
   }
 }
