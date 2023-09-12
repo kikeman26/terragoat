@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "dockingbay" {
+resource "aws_s3_bucket" "dockingbay1" {
   bucket_prefix = "docking-bay-storage-"
 
   tags = {
