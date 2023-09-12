@@ -21,10 +21,12 @@ resource "aws_s3_bucket" "dockingbay1" {
 }
 
 
-resource "aws_s3_bucket_versioning" "dockingbay1" {
-  bucket = aws_s3_bucket.dockingbay1.id
+resource "aws_s3_bucket_server_side_encryption_configuration" "dockingbay1" {
+  bucket = aws_s3_bucket.dockingbay1.bucket
 
-  versioning_configuration {
-    status = "Enabled"
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "aws:kms"
+    }
   }
 }
